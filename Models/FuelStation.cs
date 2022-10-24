@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace backend.Models
 {
-    public class User
+    public class FuelStation
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
@@ -12,10 +12,10 @@ namespace backend.Models
         [BsonElement("name")]
         public string Name {get; set;} = String.Empty;
 
-        [BsonElement("userType")]
-        public string UserType {get; set;} = String.Empty;
+        [BsonElement("city")]
+        public string City {get; set;} = String.Empty;
 
-        [BsonElement("stations")]
-        public string[]? Stations {get; set;}
+        [BsonElement("fuels")]
+        public object[]? Fuels {get; set;}
     }
 }
