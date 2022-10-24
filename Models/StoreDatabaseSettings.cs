@@ -1,6 +1,6 @@
 namespace backend.Models
 {
-    public class UserStoreDatabaseSettings : IUserStoreDatabseSettings
+    public class StoreDatabaseSettings : IStoreDatabseSettings
     {
         public string UsersCollectionName {get; set;} = String.Empty;
         public string ConnectionString {get; set;} = String.Empty;

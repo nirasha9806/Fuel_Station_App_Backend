@@ -7,7 +7,7 @@ namespace backend.Services
     {
         private readonly IMongoCollection<User> _users;
 
-        public UserService(IUserStoreDatabseSettings settings, IMongoClient mongoClient)
+        public UserService(IStoreDatabseSettings settings, IMongoClient mongoClient)
         {
             var database = mongoClient.GetDatabase(settings.DatabaseName);
             _users = database.GetCollection<User>(settings.UsersCollectionName);

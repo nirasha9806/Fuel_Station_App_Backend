@@ -6,14 +6,14 @@ using backend.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.Configure<UserStoreDatabaseSettings>(
-                builder.Configuration.GetSection(nameof(UserStoreDatabaseSettings)));
+builder.Services.Configure<StoreDatabaseSettings>(
+                builder.Configuration.GetSection(nameof(StoreDatabaseSettings)));
 
-builder.Services.AddSingleton<IUserStoreDatabseSettings>(sp => 
-    sp.GetRequiredService<IOptions<UserStoreDatabaseSettings>>().Value);
+builder.Services.AddSingleton<IStoreDatabseSettings>(sp => 
+    sp.GetRequiredService<IOptions<StoreDatabaseSettings>>().Value);
 
 builder.Services.AddSingleton<IMongoClient>(s => 
-        new MongoClient(builder.Configuration.GetValue<string>("UserStoreDatabaseSettings:ConnectionString")));
+        new MongoClient(builder.Configuration.GetValue<string>("StoreDatabaseSettings:ConnectionString")));
 
 builder.Services.AddScoped<IUserService, UserService>();
 

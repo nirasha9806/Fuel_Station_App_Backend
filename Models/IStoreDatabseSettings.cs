@@ -1,6 +1,6 @@
 namespace backend.Models
 {
-    public interface IUserStoreDatabseSettings
+    public interface IStoreDatabseSettings
     {
         string UsersCollectionName {get; set;}
         string ConnectionString {get; set;}
