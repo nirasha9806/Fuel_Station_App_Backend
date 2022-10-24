@@ -12,10 +12,13 @@ namespace backend.Models
         [BsonElement("name")]
         public string Name {get; set;} = String.Empty;
 
+        [BsonElement("username")]
+        public string Username {get; set;} = String.Empty;
+
+        [BsonElement("password")]
+        public string Password {get; set;} = String.Empty;
+
         [BsonElement("userType")]
         public string UserType {get; set;} = String.Empty;
-
-        [BsonElement("stations")]
-        public string[]? Stations {get; set;}
     }
 }
