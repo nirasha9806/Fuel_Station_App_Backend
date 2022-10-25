@@ -15,7 +15,7 @@ namespace backend.Controllers
             this.fuelStationService = fuelStationService;
         }
 
-        [HttpGet]
+        [HttpGet("get-all")]
         public ActionResult<List<FuelStation>> Get()
         {
             return fuelStationService.Get();
@@ -28,6 +28,18 @@ namespace backend.Controllers
 
             if(fuelStation == null){
                 return NotFound($"Fuel Station with Id = {id} not found");
+            }
+
+            return fuelStation;
+        }
+
+        [HttpGet("search/{name}")]
+        public ActionResult<FuelStation> GetByName(string name)
+        {
+            var fuelStation = fuelStationService.GetByName(name);
+
+            if(fuelStation == null){
+                return NotFound($"Fuel Station with name = {name} not found");
             }
 
             return fuelStation;

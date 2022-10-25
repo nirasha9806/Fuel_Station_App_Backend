@@ -29,6 +29,11 @@ namespace backend.Services
             return _stations.Find(fuelStation => fuelStation.id == id).FirstOrDefault();
         }
 
+        public FuelStation GetByName(string name)
+        {
+            return _stations.Find(fuelStation => fuelStation.Name == name).FirstOrDefault();
+        }
+
         public void Remove(string id)
         {
             _stations.DeleteOne(fuelStation => fuelStation.id == id);

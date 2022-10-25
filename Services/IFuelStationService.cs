@@ -6,6 +6,7 @@ namespace backend.Services
     {
         List<FuelStation> Get();
         FuelStation Get(string id);
+        FuelStation GetByName(string name);
         FuelStation Create(FuelStation fuelStation);
         void Update(string id, FuelStation fuelStation);
         void Remove(string id);
