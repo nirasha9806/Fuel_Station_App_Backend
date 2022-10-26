@@ -41,7 +41,7 @@ namespace backend.Controllers
              return CreatedAtAction(nameof(Get), new {id = Queue.id}, Queue);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update-depart-time/{id}")]
         public ActionResult Put(string id, [FromBody] Queue Queue)
         {
              var existingQueue = queueService.Get(id);

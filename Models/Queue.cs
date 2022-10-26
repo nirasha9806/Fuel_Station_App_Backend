@@ -7,14 +7,22 @@ namespace backend.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string id {get; set;} = String.Empty;
+        public string id { get; set; } = String.Empty;
 
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string stationId {get; set;} = String.Empty;
+        public string stationId { get; set; } = String.Empty;
 
+        [BsonElement("username")]
+        public string Users { get; set; } = String.Empty;
 
-        [BsonElement("users")]
-        public object[]? Users {get; set;} 
+        [BsonElement("vehicleType")]
+        public string VehicleType { get; set; } = String.Empty;
+
+        [BsonElement("arrivalTime")]
+        public TimeOnly arrivalTime { get; set; }
+
+        [BsonElement("departTime")]
+        public TimeOnly departTime { get; set; }
     }
 }
