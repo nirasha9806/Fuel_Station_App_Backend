@@ -9,8 +9,8 @@ namespace backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; } = String.Empty;
 
-        // [BsonElement("stationId")]
-        // public string stationId { get; set; } = String.Empty;
+        [BsonElement("stationId")]
+        public string stationId { get; set; } = String.Empty;
 
         [BsonElement("username")]
         public string Username { get; set; } = String.Empty;
