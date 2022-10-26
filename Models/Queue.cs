@@ -20,9 +20,11 @@ namespace backend.Models
         public string VehicleType { get; set; } = String.Empty;
 
         [BsonElement("arrivalTime")]
-        public TimeOnly arrivalTime { get; set; }
+        public String arrivalTime { get; set; } = String.Empty;
+
 
         [BsonElement("departTime")]
-        public TimeOnly departTime { get; set; }
+        public String departTime { get; set; } = String.Empty;
+
     }
 }
