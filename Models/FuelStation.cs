@@ -12,7 +12,7 @@ namespace backend.Models
         [BsonElement("name")]
         public string Name {get; set;} = String.Empty;
 
-        [BsonElement("code")]
+        [BsonElement("city")]
         public string Code {get; set;} = String.Empty;
 
         [BsonElement("fuelDetails")]
