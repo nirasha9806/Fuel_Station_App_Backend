@@ -15,6 +15,9 @@ namespace backend.Models
         [BsonElement("password")]
         public string Password {get; set;} = String.Empty;
 
+        [BsonElement("vehicleType")]
+        public string VehicleType {get; set;} = String.Empty;
+
         [BsonElement("userType")]
         public string UserType {get; set;} = String.Empty;
     }
