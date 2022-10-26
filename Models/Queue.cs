@@ -14,7 +14,7 @@ namespace backend.Models
         public string stationId { get; set; } = String.Empty;
 
         [BsonElement("username")]
-        public string Users { get; set; } = String.Empty;
+        public string username { get; set; } = String.Empty;
 
         [BsonElement("vehicleType")]
         public string VehicleType { get; set; } = String.Empty;
