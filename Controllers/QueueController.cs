@@ -52,7 +52,7 @@ namespace backend.Controllers
 
              queueService.Update(id,queue);
 
-             return queue;
+             return CreatedAtAction(nameof(Get), new {id = queue.id}, queue);
         }
 
          [HttpDelete("{id}")]
