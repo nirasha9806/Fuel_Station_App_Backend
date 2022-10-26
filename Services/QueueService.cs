@@ -33,9 +33,10 @@ namespace backend.Services
            _queues.DeleteOne(queue => queue.id == id);
         }
 
-        public void Update(string id, Queue queue)
+        public Queue Update(string id, Queue queue)
         {
             _queues.ReplaceOne(_queues => _queues.id == id, queue);
+            return queue;
         }
     }
 }

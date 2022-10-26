@@ -42,7 +42,7 @@ namespace backend.Controllers
         }
 
         [HttpPut("update-depart-time/{id}")]
-        public ActionResult Put(string id, [FromBody] Queue queue)
+        public ActionResult<Queue> Put(string id, [FromBody] Queue queue)
         {
              var existingQueue = queueService.Get(id);
 
@@ -52,7 +52,7 @@ namespace backend.Controllers
 
              queueService.Update(id,queue);
 
-             return NoContent();
+             return queue;
         }
 
          [HttpDelete("{id}")]
