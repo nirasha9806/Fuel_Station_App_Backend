@@ -24,25 +24,25 @@ namespace backend.Controllers
         [HttpGet("{id}")]
         public ActionResult<Queue> Get(string id)
         {
-            var Queue = queueService.Get(id);
+            var queue = queueService.Get(id);
 
-            if(Queue == null){
+            if(queue == null){
                 return NotFound($"Queue with Id = {id} not found");
             }
 
-            return Queue;
+            return queue;
         }
 
         [HttpPost]
-        public ActionResult<Queue> Post([FromBody] Queue Queue)
+        public ActionResult<Queue> Post([FromBody] Queue queue)
         {
-             queueService.Create(Queue);
+             queueService.Create(queue);
 
-             return CreatedAtAction(nameof(Get), new {id = Queue.id}, Queue);
+             return CreatedAtAction(nameof(Get), new {id = queue.id}, queue);
         }
 
         [HttpPut("update-depart-time/{id}")]
-        public ActionResult Put(string id, [FromBody] Queue Queue)
+        public ActionResult Put(string id, [FromBody] Queue queue)
         {
              var existingQueue = queueService.Get(id);
 
@@ -50,7 +50,7 @@ namespace backend.Controllers
                 return NotFound($"Queue with Id = {id} not found");
              }
 
-             queueService.Update(id,Queue);
+             queueService.Update(id,queue);
 
              return NoContent();
         }

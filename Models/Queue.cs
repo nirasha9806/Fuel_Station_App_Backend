@@ -9,20 +9,21 @@ namespace backend.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string id { get; set; } = String.Empty;
 
-        public string stationId { get; set; } = String.Empty;
+        // [BsonElement("stationId")]
+        // public string stationId { get; set; } = String.Empty;
 
         [BsonElement("username")]
-        public string username { get; set; } = String.Empty;
+        public string Username { get; set; } = String.Empty;
 
         [BsonElement("vehicleType")]
         public string VehicleType { get; set; } = String.Empty;
 
         [BsonElement("arrivalTime")]
-        public String arrivalTime { get; set; } = String.Empty;
+        public string ArrivalTime { get; set; } = String.Empty;
 
 
         [BsonElement("departTime")]
-        public String departTime { get; set; } = String.Empty;
+        public string DepartTime { get; set; } = String.Empty;
 
     }
 }
