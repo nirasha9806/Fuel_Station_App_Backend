@@ -41,7 +41,7 @@ namespace backend.Services
 
         public void Update(string id, FuelStation fuelStation)
         {
-             _stations.ReplaceOne(_stations => _stations.id == id, fuelStation);
+             _stations.ReplaceOne(fuelStation => fuelStation.id == id, fuelStation);
         }
     }
 }
