@@ -16,6 +16,6 @@ namespace backend.Models
         public string City {get; set;} = String.Empty;
 
         [BsonElement("fuelDetails")]
-        public object[]? fuelDetails {get; set;}
+        public List<object>? fuelDetails {get; set;}
     }
 }
