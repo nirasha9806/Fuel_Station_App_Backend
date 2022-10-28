@@ -75,11 +75,7 @@ namespace backend.Controllers
             var user = userService.Login(username, password);
 
             if(user == null){
-                return NotFound($"User with username = {username} not found");
-            }
-
-            if(user.Password != password){
-                return NotFound($"Username and Passowrd is not matching");
+                return NotFound($"Invalid username or password");
             }
 
             return user;

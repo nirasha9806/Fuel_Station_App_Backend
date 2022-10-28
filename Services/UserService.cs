@@ -40,7 +40,7 @@ namespace backend.Services
 
         public User Login(string username, string password)
         {
-            User user =  _users.Find(user => user.Username == username).FirstOrDefault();
+            User user =  _users.Find(user => user.Username == username && user.Password == password).FirstOrDefault();
 
             return user;
         }
