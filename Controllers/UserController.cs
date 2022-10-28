@@ -70,9 +70,9 @@ namespace backend.Controllers
         }
 
         [HttpGet("login")]
-        public ActionResult<User> Login([FromBody] string username, [FromBody] string password)
+        public ActionResult<User> Login([FromBody] string username)
         {
-            var user = userService.Login(username, password);
+            var user = userService.Login(username);
 
             if(user == null){
                 return NotFound($"Invalid username or password");
