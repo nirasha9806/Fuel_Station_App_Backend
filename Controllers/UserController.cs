@@ -69,7 +69,7 @@ namespace backend.Controllers
              return Ok($"User with Id = {id} deleted");
         }
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public ActionResult<User> Login([FromBody] string username)
         {
             var user = userService.Login(username);
