@@ -34,15 +34,10 @@ namespace backend.Controllers
         }
 
         [HttpGet("search/{name}")]
-        public ActionResult<FuelStation> GetByName(string name)
+        public ActionResult<List<FuelStation>> GetByName(string name)
         {
-            var fuelStation = fuelStationService.GetByName(name);
+            return fuelStationService.GetByName(name);
 
-            if(fuelStation == null){
-                return NotFound($"Fuel Station with name = {name} not found");
-            }
-
-            return fuelStation;
         }
 
         [HttpPost]
