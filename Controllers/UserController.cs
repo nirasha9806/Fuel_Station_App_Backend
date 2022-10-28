@@ -70,7 +70,7 @@ namespace backend.Controllers
         }
 
         [HttpGet("login")]
-        public ActionResult<User> Login(string username, string password)
+        public ActionResult<User> Login([FromBody] string username, [FromBody] string password)
         {
             var user = userService.Login(username, password);
 
