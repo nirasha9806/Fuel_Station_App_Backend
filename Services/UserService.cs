@@ -37,5 +37,12 @@ namespace backend.Services
         {
             _users.ReplaceOne(user => user.id == id, user);
         }
+
+        public User Login(string username, string password)
+        {
+            User user =  _users.Find(user => user.Username == username).FirstOrDefault();
+
+            return user;
+        }
     }
 }

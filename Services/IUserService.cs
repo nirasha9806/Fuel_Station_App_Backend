@@ -9,5 +9,6 @@ namespace backend.Services
         User Create(User user);
         void Update(string id, User user);
         void Remove(string id);
+        User Login(string username, string password);
     }
 }

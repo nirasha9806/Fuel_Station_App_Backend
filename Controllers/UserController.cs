@@ -68,5 +68,21 @@ namespace backend.Controllers
 
              return Ok($"User with Id = {id} deleted");
         }
+
+        [HttpGet("login")]
+        public ActionResult<User> Login(string username, string password)
+        {
+            var user = userService.Login(username, password);
+
+            if(user == null){
+                return NotFound($"User with username = {username} not found");
+            }
+
+            if(user.Password != password){
+                return NotFound($"Username and Passowrd is not matching");
+            }
+
+            return user;
+        }
     }
 }
